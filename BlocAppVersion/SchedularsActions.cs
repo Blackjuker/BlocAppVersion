@@ -117,6 +117,7 @@ namespace BlocAppVersion
                 int i = 1;
                
                 var folder = TaskService.Instance.RootFolder.CreateFolder(Globalvars.ROOTFOLDERSCHEDULERNAME);
+
                 foreach (string line in lines)
                 {
                     ts = new TaskService();
@@ -129,7 +130,7 @@ namespace BlocAppVersion
 
                    
                     td.Triggers.Add(new DailyTrigger { DaysInterval = 1, StartBoundary = DateTime.Today + new TimeSpan(hours, minutes, 0) });
-                    td.Actions.Add(new ExecAction(@Globalvars.PATHFICHIERSCHEDULES, null, null));
+                    td.Actions.Add(new ExecAction(Globalvars.ProjetNamePath + @"\BlocAppVersion.exe", null, null));
 
                     folder.RegisterTaskDefinition(Globalvars.TASKNAME+ i.ToString(), td);
 
@@ -139,7 +140,7 @@ namespace BlocAppVersion
 
 
                
-                Console.WriteLine("Tasks created and deleted." + Globalvars.PATHFICHIERSCHEDULES);
+              //  Console.WriteLine("Tasks created and deleted." + Globalvars.PATHFICHIERSCHEDULES);
             }
             catch (Exception ex)
             {

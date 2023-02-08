@@ -21,6 +21,7 @@ namespace BlocAppVersion
             key.Close();
 
 
+            
 
             //redemarrage de l'ordinateur
             Process.Start("shutdown", "/r /t 30");

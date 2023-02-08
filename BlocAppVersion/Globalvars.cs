@@ -13,7 +13,7 @@ namespace BlocAppVersion
 
         private static string _nomFichierSchedules = "Schedules.txt";
        
-        private static string _folderSchedulerRootName = "AppBlockingFolder";
+        private static string _folderSchedulerRootName = "SetupBlockApp";
         private static int _allTaskCreated;
         private static string _taskName = "AppBlock";
         private static List<Form> _listForms;

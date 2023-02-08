@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BlocAppVersion
 {
@@ -11,7 +12,7 @@ namespace BlocAppVersion
     {
         public static void CreateFichier()
         {
-            string[] lines = new string[] { "09:00", "12:00", "15:00", "22:24" };
+            string[] lines = new string[] { "09:00", "17:57" };
             try
             {
                
@@ -20,7 +21,7 @@ namespace BlocAppVersion
                 if (!File.Exists(Globalvars.PATHFICHIERSCHEDULES))
                 {
                     File.WriteAllLines(Globalvars.PATHFICHIERSCHEDULES, lines);
-                    Console.WriteLine("File written successfully."+ Globalvars.PATHFICHIERSCHEDULES);
+                  //  Console.WriteLine("File written successfully."+ Globalvars.PATHFICHIERSCHEDULES);
                 }
                 else
                 {
@@ -29,7 +30,7 @@ namespace BlocAppVersion
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
     }
